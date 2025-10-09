@@ -9,10 +9,9 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 public class Order {
-    private final Long id;
-    private final LocalDate orderDate;
-    private final LocalDate deliveryDate;
-    private final String status;
-    private final Set<Product> products;
-
+    private Long id;
+    private LocalDate orderDate;
+    private LocalDate deliveryDate;
+    private String status;
+    private Set<Product> products;
 }

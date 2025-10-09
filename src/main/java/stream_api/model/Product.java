@@ -1,16 +1,15 @@
 package stream_api.model;
 
-import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
 public class Product {
-    private final Long id;
-    private final String name;
-    private final String category;
-    private final BigDecimal price;
-
+    private Long id;
+    private String name;
+    private String category;
+    private BigDecimal price;
 }

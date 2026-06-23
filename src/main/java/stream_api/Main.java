@@ -108,7 +108,7 @@ public class Main {
                 .filter(Objects::nonNull)
                 .filter(x-> x.getPrice().compareTo(BigDecimal.valueOf(100)) >0)
                 .filter(x->x.getCategory().equals("Books"))
-                .collect(toList());
+                .toList();
         booksWithOneHundredPrice.forEach(System.out::println);
         System.out.println("-".repeat(100));
 
@@ -156,7 +156,7 @@ public class Main {
                         .filter(Objects::nonNull)
                         .filter(j-> !j.getOrderDate().isBefore(LocalDate.of(2021, 2, 1)) && !j.getOrderDate().isAfter( LocalDate.of(2021, 4, 1)))
                         .flatMap(i-> i.getProducts().stream()))
-                .collect(toList());
+                .toList();
         twoLvlClientListProducts.forEach(System.out::println);
         System.out.println("-".repeat(100));
 
@@ -300,7 +300,7 @@ public class Main {
         Map<Customer,List<Order>> customerOrdersMap = customers.stream()
                 .filter(Objects::nonNull)
                 .collect(toMap(
-                        x->x,
+                        Function.identity(),
                         c -> c.getOrders() == null ? Collections.emptyList()
                                 : c.getOrders().stream().collect(toList())
                 ));
